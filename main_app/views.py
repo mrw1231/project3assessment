@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Widget
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 
 
 # Create your views here.
@@ -12,3 +12,7 @@ class WidgetCreate(CreateView):
     model = Widget
     fields = "__all__"
     success_url = "/"
+
+class WidgetDelete(DeleteView):
+  model = Widget
+  success_url = "/"
